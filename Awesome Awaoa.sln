@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97A13F40-3278-4FF0-B056-A9E2E13DE4AE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		NuGet.config = NuGet.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Awaoa.Core", "src\Awaoa.Core\Awaoa.Core.csproj", "{00B90B05-8F00-44A7-AFD2-C69C77E16AE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaoa.Core.UnitTest", "tests\Awaoa.Core.UnitTest\Awaoa.Core.UnitTest.csproj", "{256F96EB-A167-4908-907A-A641679E8589}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00B90B05-8F00-44A7-AFD2-C69C77E16AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B90B05-8F00-44A7-AFD2-C69C77E16AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B90B05-8F00-44A7-AFD2-C69C77E16AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B90B05-8F00-44A7-AFD2-C69C77E16AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{256F96EB-A167-4908-907A-A641679E8589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256F96EB-A167-4908-907A-A641679E8589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256F96EB-A167-4908-907A-A641679E8589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256F96EB-A167-4908-907A-A641679E8589}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE494FDD-B8D4-4F29-B152-4EC06160DC51}
+	EndGlobalSection
+EndGlobal

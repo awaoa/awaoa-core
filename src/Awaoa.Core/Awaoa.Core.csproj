@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>Awaoa</Company>
+    <Authors>Awaoa</Authors>
+    <AssemblyName>Awaoa.Core</AssemblyName>
+    <RootNamespace>Awaoa.Core</RootNamespace>
+    <PackageProjectUrl>https://github.com/awaoa</PackageProjectUrl>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/47768629?s=200&amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/awaoa/awaoa-core</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+    
+</Project>

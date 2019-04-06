@@ -1,0 +1,56 @@
+# .NET Core CLI task, build, test, publish and deploy .NET Core libary in Azure Pipelines
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=vsts
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core?view=vsts&tabs=yaml
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=vsts
+
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+resources:
+- repo: self
+
+jobs:
+- job: Linux
+  displayName: Hosted on Ubuntu 1604
+
+  variables:
+    DOTNET_CORE_CLI_ARGS: '--configuration release'
+    VERSIONING: '$(Version.Major).$(Version.Minor).$(Version.Patch)-$(Build.BuildNumber)'
+
+  pool:
+    vmImage: 'ubuntu-16.04'
+
+  steps:
+  - task: NuGetToolInstaller@0
+    displayName: 'Install latest NuGet'
+    inputs:
+      versionSpec: '>=4.3.0' 
+      checkLatest: true
+
+  - task: NuGet@0
+    displayName: 'Restore Dependencies'
+    inputs:
+      command: 'restore'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Tests'
+    inputs:
+      command: test
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Buid'
+    inputs:
+      command: build
+      arguments: $(DOTNET_CORE_CLI_ARGS)
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Pack'
+    inputs:
+      command: pack
+      arguments: $(DOTNET_CORE_CLI_ARGS)
+      versioningScheme: byEnvVar
+      versionEnvVar: VERSIONING
+
+#  - task: DotNetCoreCLI@2
+#    displayName: 'Publish'
+#    inputs:
+#      command: push
