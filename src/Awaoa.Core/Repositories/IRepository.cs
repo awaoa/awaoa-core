@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using Awaoa.Core.Entities;
 
 namespace Awaoa.Core.Repositories
@@ -14,18 +15,20 @@ namespace Awaoa.Core.Repositories
     public interface IRepository<TEntity, TPrimaryKey>
                where TEntity : class, IEntity<TPrimaryKey>
     {
-        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+        Task<IEnumerable<TEntity>> GetAync(Expression<Func<TEntity, bool>> filter = null,
                                  Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-                                 string includeProperties = "");
+                                 params string[] includeProperties);
 
-        TEntity GetByID(TPrimaryKey id);
+        Task<TEntity> GetByIDAync(TPrimaryKey id);
 
-        TEntity Create(TEntity entity);
+        Task<TEntity> CreateAync(TEntity entity);
 
-        TEntity Update(TEntity entityToUpdate);
+        Task<TEntity> UpdateAync(TEntity entityToUpdate);
 
-        void Delete(TPrimaryKey id);
+        Task DeleteAync(TPrimaryKey id);
 
-        void Delete(TEntity entityToDelete);
+        Task DeleteAync(TEntity entityToDelete);
+
+        Task<int> CountAync();
     }
 }
